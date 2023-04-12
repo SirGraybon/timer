@@ -1,15 +1,7 @@
 
 const setTimer = function(input) {
-  let timer = (input[0])
-  console.log(timer);
-  let alarms = timer.filter(alarm => ((alarm > 0) && (Number(alarm) !== NaN)));
-  console.log(alarms);
-  let sortedAlarms = alarms.sort((a, b) => a - b);
-  console.log(sortedAlarms);
-
-  for (let alarm of sortedAlarms) {
-
-
+  let alarms = input[0].filter(alarm => ((alarm > 0) && (Number(alarm) !== NaN)));
+  for (let alarm of alarms) {
     setTimeout(() => {
       process.stdout.write('\x07');
       process.stdout.write(`BEEP @ ${alarm} seconds \n`);
